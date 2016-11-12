@@ -40,6 +40,7 @@
                             </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="C1s-MS-xC6">
                                 <rect key="frame" x="20" y="129" width="280" height="419"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="TlT-MJ-MAY">
                                     <size key="itemSize" width="102" height="104"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -47,14 +48,14 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="i3j-K8-N1Z">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PokeCell" id="i3j-K8-N1Z" customClass="PokeCell" customModule="Pokedex3" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="102" height="104"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="102" height="104"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="4" translatesAutoresizingMaskIntoConstraints="NO" id="hcs-MM-ZLV">
+                                                <imageView userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="4" translatesAutoresizingMaskIntoConstraints="NO" id="hcs-MM-ZLV">
                                                     <rect key="frame" x="0.0" y="0.0" width="102" height="80"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="80" id="HSP-8h-vWK"/>
@@ -79,6 +80,10 @@
                                             <constraint firstItem="hcs-MM-ZLV" firstAttribute="leading" secondItem="i3j-K8-N1Z" secondAttribute="leading" id="oQA-9z-F73"/>
                                             <constraint firstItem="8Xp-L7-YTC" firstAttribute="top" secondItem="hcs-MM-ZLV" secondAttribute="bottom" id="v3u-Fk-dZS"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="nameLbl" destination="8Xp-L7-YTC" id="d9V-jb-Mp4"/>
+                                            <outlet property="thumbImg" destination="hcs-MM-ZLV" id="YdA-kx-DO9"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -101,6 +106,9 @@
                             <constraint firstAttribute="trailing" secondItem="C1s-MS-xC6" secondAttribute="trailing" constant="20" id="sJc-eI-cHQ"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="collection" destination="C1s-MS-xC6" id="VTD-RU-pop"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
