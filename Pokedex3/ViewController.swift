@@ -30,6 +30,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         searchBar.returnKeyType = UIReturnKeyType.done
         
         parsePokemonCSV()
+        
         initAudio()
         
     }
@@ -60,7 +61,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             
             let csv = try CSV(contentsOfURL: path)
             let rows = csv.rows
-            print(rows)
+            // print(rows)
             
             for row in rows {
                 
